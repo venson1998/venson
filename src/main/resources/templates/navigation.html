@@ -44,12 +44,16 @@
                     <button type="submit" class="btn btn-default">搜索</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="https://github.com/login/oauth/authorize?client_id=58ef52c645f98463fa0c&redirect_url=http://localhost:8887/callback&scope=user&state=1">登录</a></li>
-                    <li class="dropdown">
+                    <li th:if="${session.user == null}">
+                        <a href="https://github.com/login/oauth/authorize?client_id=58ef52c645f98463fa0c&redirect_url=http://localhost:8887/callback&scope=user&state=1">
+                            登录
+                        </a>
+                    </li>
+                    <li class="dropdown" th:if="${session.user != null}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             我
                             <span class="caret"></span>
-                        </a>
+                        </a>    
                         <ul class="dropdown-menu">
                             <li><a href="#">我的作品</a></li>
                             <li><a href="#">个人资料</a></li>
