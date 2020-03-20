@@ -45,15 +45,20 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li th:if="${session.user == null}">
+<<<<<<< HEAD
                         <a href="https://github.com/login/oauth/authorize?client_id=58ef52c645f98463fa0c&redirect_uri=http://localhost:8080/callback&scope=user&state=1">
                         登录
+=======
+                        <a href="https://github.com/login/oauth/authorize?client_id=58ef52c645f98463fa0c&redirect_url=http://localhost:8887/callback&scope=user&state=1">
+                            登录
+>>>>>>> c630a74aeafe8bb84c50af6ca65c50b3ec1bb0b7
                         </a>
                     </li>
                     <li class="dropdown" th:if="${session.user != null}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             我
                             <span class="caret"></span>
-                        </a>
+                        </a>    
                         <ul class="dropdown-menu">
                             <li><a href="#">我的作品</a></li>
                             <li><a href="#">个人资料</a></li>
