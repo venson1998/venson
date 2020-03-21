@@ -4,7 +4,6 @@ import com.song.building.venson.mapper.UserMapper;
 import com.song.building.venson.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,6 +17,7 @@ public class SessionInterceptor implements HandlerInterceptor {
     @Autowired
     public UserMapper userMapper;
 
+    //持久化登录获取登录
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Cookie[] cookies = request.getCookies();
@@ -33,6 +33,9 @@ public class SessionInterceptor implements HandlerInterceptor {
                 }
             }
         }
+
+
+
         return true;
     }
 

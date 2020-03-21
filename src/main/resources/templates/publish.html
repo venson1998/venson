@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>发布</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/manson.css">
+    <script src="static/js/bootstrap.js" type="application/javascript"></script>
+
+</head>
+<body style="background-color: #efefef">
+
+    <div th:replace="navigation.html"></div>
+
+    <div class="container-fluid" style="margin: 35px;background-color: white">
+        <div class="row">
+
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+
+                <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>发起</h2>
+
+                <form action="/publish" method="post">
+                    <div class="form-group">
+                        <label for="title">标题</label>
+                        <input type="text" class="form-control" id="title" th:value="${title}" name="title" placeholder="标题....">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">内容</label>
+                        <textarea type="text" class="form-control" id="description" th:value="${description}" name="description" cols="30" rows="10" placeholder="内容...."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">标签</label>
+                        <input type="text" class="form-control" id="tag" th:value="${tag}" name="tag" placeholder="输入标签,以，隔开">
+                    </div>
+
+                    <span class="alert alert-danger" th:text="${error}" th:if="${error != null}"></span>
+                    <button type="submit" class="btn btn-success btn-publish" style="margin-bottom: 15px">发布</button>
+
+                </form>
+            </div>
+
+            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                <h3>问题发起指南</h3>
+                ⚪作品标题：请用精准的语言描述你发布的作品，不超过25字<br>
+                ⚪作品内容：详细补充您的作品内容，并确保作品描述清晰直观，并提供一些相关资料<br>
+                ⚪选择标签：选择一个或者多个合适的标签，用逗号隔开，每个标签不超过10个字<br>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
